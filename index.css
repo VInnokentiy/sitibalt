@@ -1,0 +1,541 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 85px;
+
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  height: 90px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 117px 0 92px;
+  align-items: center;
+
+  background-color: rgb(0, 105, 163);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 100%;
+
+  font-size: 21px;
+}
+
+nav p {
+  display: flex;
+  align-items: center;
+  color: #111111;
+  height: 80px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: rgb(225, 245, 244);
+  height: 150px;
+}
+footer p {
+  color: #222222;
+}
+
+nav p:hover {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+}
+
+h2 {
+  font-size: 40px;
+  margin: 20px;
+}
+
+p {
+  color: #777777;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social > a > img {
+  height: 55px;
+  width: 55px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.body-img {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0px 220px 0px 220px;
+}
+
+.info-text > p {
+  margin-bottom: 30px;
+}
+.info-text {
+  width: 55%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.about-company {
+  justify-content: space-evenly;
+  display: flex;
+
+  height: 450px;
+}
+
+.origin-catalog {
+  display: none;
+}
+
+.about-img {
+  height: 100%;
+}
+
+.about-work {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px 50px 20px 50px;
+  width: 100%;
+}
+
+.about-work > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 22%;
+  margin: 5px;
+}
+
+.stat {
+  color: rgb(34, 34, 34);
+  font-size: 69px;
+  font-weight: 600;
+}
+
+.stat-text {
+  font-size: 19px;
+  font-weight: 400;
+  color: rgb(102, 102, 102);
+  line-height: 2.5;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  height: 500px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 10px;
+  border: #333333 1px solid;
+  width: 550px;
+  height: 130px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  background-color: rgb(253, 253, 249);
+  box-shadow: none;
+}
+
+.suppliers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-card > img {
+  height: 100%;
+  width: 30%;
+}
+
+.suppliers-content {
+  display: flex;
+  width: 1140px;
+}
+.suppliers-content > img {
+  height: 360px;
+  width: 38%;
+}
+
+/* Выпадающий список */
+
+.dropdown {
+  width: 55%;
+  margin: 57px auto;
+  border: 1px solid #d4d4d4;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  /* position: relative; */
+  z-index: 1;
+  padding: 10px;
+  border: 1px solid #d4d4d4;
+  cursor: pointer;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 10px;
+}
+.dropdown-content > p {
+  margin-bottom: 20px;
+}
+
+.dropdown-content > a {
+  text-decoration: none;
+  color: #03c4eb;
+}
+.img-megadyne,
+.img-kf,
+.img-ngb,
+.img-chiaravalli {
+  width: 360px;
+  height: 75px;
+}
+
+.img-intralox {
+  width: 300px;
+  height: 90px;
+}
+
+.img-gates {
+  width: 270px;
+  height: 90px;
+}
+
+.dropdown-item.open .dropdown-content {
+  display: block;
+}
+
+.arrow {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.4s ease;
+}
+
+.arrow.open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Каталог */
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.custom-table {
+  width: 80%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.custom-table td:first-child {
+  background-color: #f4f4f4; /* Цвет фона для первого столбца */
+}
+
+.custom-table td:last-child {
+  background-color: #fff;
+}
+
+.custom-table tr:nth-child(even) td:last-child {
+  background-color: #f9f9f9; /* Цвет для четных строк во втором столбце */
+}
+
+.custom-table td,
+.custom-table th {
+  width: calc(100% / 10); /* Рассчитывает ширину для трех столбцов */
+}
+
+/* Если в строке только два столбца */
+.custom-table tr:has(td[colspan='2']) td {
+  width: calc(100% / 2); /* Для двух столбцов */
+}
+/* ФУТЕР */
+
+.second-phone {
+  margin-left: 87px;
+}
+.weekend {
+  margin-left: 135px;
+}
+
+/* Для устройств с шириной экрана до 768px (например, мобильные устройства) */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-margin-top: 85px;
+
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  header {
+    display: flex;
+    position: fixed;
+    height: 75px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+    align-items: center;
+    background-color: rgb(0, 105, 163);
+    z-index: 1000;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .social > a > img {
+    height: 35px;
+    width: 35px;
+  }
+
+  .logo {
+    margin-left: 15px;
+    height: 95%;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgb(225, 245, 244);
+    height: auto;
+    padding: 20px;
+  }
+  footer div {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .origin-catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 0 0 12px;
+    border: 2px solid #111111;
+    border-radius: 10px;
+    width: 95%;
+    background-color: rgb(225, 245, 244);
+  }
+
+  .origin-catalog > h2 {
+    margin: 5px;
+  }
+
+  .body-img {
+    margin-top: 70px;
+    width: 100%;
+  }
+
+  .info {
+    margin: 0 10px;
+  }
+
+  .info-text {
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .about-company {
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  .about-img {
+    height: 300px;
+  }
+
+  .about-work {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-work > div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .products,
+  .suppliers {
+    width: 94%;
+    margin: 5px;
+  }
+
+  .cards {
+    height: auto;
+  }
+
+  .product-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .product-card > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .suppliers-content {
+    flex-direction: column;
+    width: 100%;
+  }
+  .suppliers-content img {
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .img-megadyne,
+  .img-ngb,
+  .img-intralox,
+  .img-gates {
+    width: 100%;
+    height: auto;
+  }
+
+  .second-phone,
+  .weekend {
+    margin-left: 0;
+  }
+}
+
+/* Страница с каталогами */
+
+.back-to-main {
+  border: 1px solid #111111;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+}
+
+.back-to-main:hover {
+  border: 1px solid white;
+  transition: border 0.2s;
+}
+
+.catalog {
+  margin-top: 80px;
+}
+
+.catalog ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.catalog > ul > li {
+  font-size: 20px;
+  font-weight: bold;
+  color: #004db2;
+  margin-bottom: 10px;
+}
+
+.catalog ul ul > li {
+  font-size: 18px;
+  font-weight: normal;
+  color: #333;
+  margin: 8px 0;
+}
+
+.catalog ul ul ul > li {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.catalog ul ul ul > li a,
+#link {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.catalog ul ul ul > li a:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}
+
+/* Для вложенных списков добавить маркеры */
+.catalog ul ul {
+  list-style-type: disc;
+}
+
+.catalog ul ul ul {
+  list-style-type: circle;
+}
+
+.catalog ul ul ul ul {
+  list-style-type: square;
+}

@@ -164,7 +164,7 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
 
-  height: 500px;
+  height: 700px;
 }
 
 .product-card {
@@ -194,7 +194,7 @@ a {
 
 .product-card > img {
   height: 100%;
-  width: 30%;
+  width: 22%;
 }
 
 .suppliers-content {

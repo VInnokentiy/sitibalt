@@ -5,8 +5,8 @@ const contractElement = document.querySelector('#contract');
 
 const targetYearValue = new Date().getFullYear() - 2009;
 const targetPercentValue = 100;
-const targetPartnerValue = 203;
-const targetContractValue = 5137;
+const targetPartnerValue = 200;
+const targetContractValue = 5000;
 
 const startValue = 0;
 const duration = 1000; // Длительность анимации в миллисекундах
@@ -37,9 +37,8 @@ function animatePercent(currentTime) {
 function animateContracts(currentTime) {
   const elapsedTime = currentTime - startTime;
   const progress = Math.min(elapsedTime / duration, 1);
-  const currentValue = Math.floor(
-    progress * (targetContractValue - startValue)
-  );
+  const currentValue =
+    Math.floor(progress * (targetContractValue - startValue)) + ' +';
   contractElement.textContent = currentValue;
 
   if (progress < 1) {
@@ -49,7 +48,8 @@ function animateContracts(currentTime) {
 function animatePartners(currentTime) {
   const elapsedTime = currentTime - startTime;
   const progress = Math.min(elapsedTime / duration, 1);
-  const currentValue = Math.floor(progress * (targetPartnerValue - startValue));
+  const currentValue =
+    Math.floor(progress * (targetPartnerValue - startValue)) + ' +';
   partnerElement.textContent = currentValue;
 
   if (progress < 1) {
